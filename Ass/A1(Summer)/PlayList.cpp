@@ -1,7 +1,7 @@
 // Write your name and date here
 #include "PlayList.h"
 
-PlayList::PlayList(): head(NULL), tail(NULL) {
+PlayList::PlayList(): head(NULL), tail(NULL), elementCount(0){
 
 }
 
@@ -39,7 +39,8 @@ Song Song:: remove(unsigned int pos){
    
    if(pos = 0){
       head = current->next;
-      return current
+      elementCount--;
+      return current->song;
     }
    else{
       for(int i=0; i<pos; i++){
@@ -47,7 +48,8 @@ Song Song:: remove(unsigned int pos){
       }
       remNode = current->next;
       current->next = remNode->next;
-      return remNode;
+      eleemtnCount--;
+      return remNode->song;
    }
 }
    
@@ -60,10 +62,18 @@ void swap(unsigned int pos1, unsigned int pos2);
 // PRE: 0 <= pos <= length of list-1
 // PARAM: pos - 0-based position of element to be removed and returned
 // POST: returns the Song at position pos
-Song get(unsigned int pos) const;
+Song get(unsigned int pos) const{
+   playListNode * current = head;
+   for(int i=0; i<=pos; i++){
+      current = current->next;
+   }
+   return current->song;
+}
 
 // POST: returns the number of songs in the PlayList
-unsigned int size() const;
+unsigned int size() const{
+   return elementCount;
+}
 
 
 // PlayList method implementations go here
