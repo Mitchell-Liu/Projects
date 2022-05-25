@@ -14,9 +14,9 @@ void PlayList:: insert(Song sng, unsigned int pos){
         head = newNode;
         tail = newNode;
     }
-    else if(pos == elementCount){
-        tail->next = newNode;
-        tail = newNode;
+    else if(pos == 0){
+        current->next = head;
+        head = current;
     }
     else{
         for(int i=0; i<pos; i++){
@@ -24,6 +24,46 @@ void PlayList:: insert(Song sng, unsigned int pos){
                 current = current->next;
             }
         }
+        newNode->next = current->next;
+        current->next = current;
     }
+    elementCount++;
 }
+
+// PRE: 0 <= pos <= length of list-1
+// PARAM: pos - 0-based position of element to be removed and returned
+// POST: Song at position pos is removed and returned
+Song Song:: remove(unsigned int pos){
+   playListNode * current = head;
+   playListNode * remNode = NULL;
+   
+   if(pos = 0){
+      head = current->next;
+      return current
+    }
+   else{
+      for(int i=0; i<pos; i++){
+         current = current->next;
+      }
+      remNode = current->next;
+      current->next = remNode->next;
+      return remNode;
+   }
+}
+   
+// PRE: 0 <= pos1, pos2 <= length of list-1
+// PARAM: pos1, pos2 - 0-based positions of elements to be swapped
+// POST: Songs at positions pos1 and pos2 are swapped
+void swap(unsigned int pos1, unsigned int pos2);
+
+// Accessor
+// PRE: 0 <= pos <= length of list-1
+// PARAM: pos - 0-based position of element to be removed and returned
+// POST: returns the Song at position pos
+Song get(unsigned int pos) const;
+
+// POST: returns the number of songs in the PlayList
+unsigned int size() const;
+
+
 // PlayList method implementations go here
