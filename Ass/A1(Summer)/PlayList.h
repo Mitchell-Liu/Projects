@@ -71,6 +71,7 @@ public:
 private:
 	PlayListNode * head;
 	PlayListNode * tail;
+	int elementCount = 0;
 	// TO DO
 };
 
