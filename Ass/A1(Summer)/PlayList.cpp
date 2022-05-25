@@ -48,7 +48,7 @@ Song Song:: remove(unsigned int pos){
       }
       remNode = current->next;
       current->next = remNode->next;
-      eleemtnCount--;
+      elementCount--;
       return remNode->song;
    }
 }
