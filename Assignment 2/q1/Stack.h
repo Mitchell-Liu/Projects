@@ -18,30 +18,30 @@ class Stack {
     public:
 
         // Desc:  Object constructor
-        // Post:  
+        // Post:  Stack is created
         Stack();
 
 
         // Desc:  Insert element x to the top of the stack.
-        //  Pre:  
-        // Post:  
+        //  Pre:Element inserted must be an integer and the stack is not full
+        // Post:  New element is added to the back of the stack  
         void push(int x);
 
 
         // Desc:  Remove and return element at the top of the stack.
-        //  Pre:  
-        // Post:  
+        //  Pre:  Stack is not empty
+        // Post:  last element is removed and returned  
         int pop();
 
 
         // Desc:  Return the topmost element of the stack.
-        //  Pre:  
-        // Post:  
+        //  Pre:  Stack is not empty
+        // Post:  The last element is returned  
         int peek() const;
 
 
-        // Desc:  
-        // Post:  
+        // Desc:  Checks if the stack is empty
+        // Post:  Returns true if the stack is empty and returns false otherwise
         bool isEmpty() const;
 
 };

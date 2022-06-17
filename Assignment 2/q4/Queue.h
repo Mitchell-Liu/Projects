@@ -3,7 +3,7 @@
 class Queue {
     private:
         static unsigned const INITIAL_SIZE = 6;
-        int arr[INITIAL_SIZE];  // replace this by int * arr in Question 4(a)
+         // replace this by int * arr in Question 4(a)
 
         unsigned size;        // number of elements in the queue
         unsigned capacity;    // number of slots in the array
@@ -11,6 +11,7 @@ class Queue {
         unsigned backindex;   // index where the next element will be placed
 
     public:
+    int * arr;
         // Desc:  Constructor
         Queue();
 

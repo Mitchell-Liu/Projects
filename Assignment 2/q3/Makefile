@@ -9,5 +9,5 @@ eval.o:	eval.cpp Scanner.h Stack.h
 	g++ -std=c++0x -c eval.cpp
 	
 clean:	
-	rm -f *.o x
+	rm -f *.o infixeval
 
